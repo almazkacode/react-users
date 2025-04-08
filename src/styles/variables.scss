@@ -6,25 +6,24 @@ $color-background: #f8f8f8;
 
 // Размеры шрифтов
 $font-size-xl: 36px;
-// $font-size-lg: 24px;
+$font-size-lg: 24px;
 $font-size-md: 16px;
 // $font-size-sm: 14px;
 // $font-size-xs: 12px;
 
 //Border
 $border-radius: 8px;
-$border-width: 1px;
 
 //Медиазапросы
 $breakpoint-xs: 576px;
-// $breakpoint-sm: 768px;
+$breakpoint-sm: 768px;
 $breakpoint-md: 1024px;
 // $breakpoint-lg: 1200px;
 
 $transition: all 0.3s ease;
 
 // Основные отступы
-// $space-xs: 8px;
+$space-xs: 8px;
 $space-sm: 15px;
 // $space-md: 24px;
 $space-lg: 30px;
@@ -32,3 +31,5 @@ $space-xl: 80px;
 
 // Контейнер
 $width-container: 1440px;
+
+$shadow: 0 1px 5px 0 rgba(51, 51, 51, 0.15);
