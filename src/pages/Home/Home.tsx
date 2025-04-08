@@ -9,7 +9,7 @@ export const Home: React.FC = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const { users, isLoading, isError, error, isSuccess } = useUsersQuery();
+  const { data: users, isLoading, isError, error, isSuccess } = useUsersQuery();
 
   if (isError && error instanceof Error) {
     return <div>Error: {error.message}</div>;
@@ -20,15 +20,16 @@ export const Home: React.FC = () => {
       {/* {isLoading && <Skeleton />} */}
       {isSuccess && (
         <ul className={styles.grid}>
-          {users.map((user) => (
-            <Card
-              key={user.id}
-              id={user.id}
-              name={user.name}
-              email={user.email}
-              city={user.address.city}
-            />
-          ))}
+          {Array.isArray(users) &&
+            users.map((user) => (
+              <Card
+                key={user.id}
+                id={user.id}
+                name={user.name}
+                email={user.email}
+                city={user.address.city}
+              />
+            ))}
         </ul>
       )}
     </div>

@@ -1,0 +1,21 @@
+.card {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: $space-lg;
+  border: 1px solid $color-background;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+}
+
+.name {
+  font-size: $font-size-lg;
+  margin-bottom: $space-md;
+}
+
+.list {
+  margin-bottom: $space-md;
+}
+
+.address {
+  font-style: normal;
+}
