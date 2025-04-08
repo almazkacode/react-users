@@ -1,0 +1,18 @@
+@mixin font($style: normal, $weight: 400, $size, $height: 136%) {
+  font-style: $style;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+}
+
+@mixin flex($gap) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin border($width: 1px, $color, $radius) {
+  border: $width solid $color;
+  border-radius: $radius;
+}
