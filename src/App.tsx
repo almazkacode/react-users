@@ -5,7 +5,18 @@ import { Header } from './components/layout/Header/Header';
 // import { Profile } from './pages/Profile/Profile';
 
 function App() {
-  return <Header />;
+  return (
+    <>
+      <Header />
+      <main className="main">
+        {/* <Routes> */}
+        {/* <Route path="/" element={<Home />} /> */}
+        {/* <Route path="/profile" element={<Profile />} /> */}
+        {/* <Route path="*" element={<Navigate to="/" />} /> */}
+        {/* </Routes> */}
+      </main>
+    </>
+  );
 }
 
 export default App;
