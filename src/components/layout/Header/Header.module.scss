@@ -1,0 +1,16 @@
+.header {
+  background-color: $color-primary;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: $space-lg;
+  padding-bottom: $space-lg;
+}
+
+.title {
+  font-size: $font-size-xl;
+  color: $color-light;
+}

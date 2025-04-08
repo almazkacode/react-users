@@ -23,7 +23,7 @@ body {
   min-width: 320px;
   height: 100%;
   font-family: 'Roboto', Arial, sans-serif;
-  @include font($size: 16px);
+  font-size: $font-size-md;
   color: $color-dark;
 }
 
@@ -42,7 +42,7 @@ button {
 
 a,
 button {
-  @extend %transition;
+  transition: $transition;
 }
 
 input {
@@ -72,4 +72,20 @@ p,
 ul {
   margin: 0;
   padding: 0;
+}
+
+.container {
+  max-width: $width-container;
+  margin: 0 auto;
+  padding: 0 $space-xl;
+
+  @media (max-width: $breakpoint-md) {
+    padding-left: $space-lg;
+    padding-right: $space-lg;
+  }
+
+  @media (max-width: $breakpoint-xs) {
+    padding-left: $space-sm;
+    padding-right: $space-sm;
+  }
 }
