@@ -1,7 +1,7 @@
 import styles from './Profile.module.scss';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import { useUsersQuery } from '../../hooks/useUsersQuery';
+import { useUserQuery } from '../../hooks/useUserQuery';
 
 import { ErrorBlock } from '../../components/elements/ErrorBlock/ErrorBlock';
 import { Button } from '../../components/ui/Button/Button';
@@ -11,7 +11,7 @@ export const Profile: React.FC = () => {
 
   const { id } = useParams<{ id: string }>();
 
-  const { data: user, isLoading, isError, isSuccess } = useUsersQuery(id ? Number(id) : undefined);
+  const { data: user, isLoading, isError, isSuccess } = useUserQuery(Number(id));
 
   if (isLoading) {
     return (
@@ -21,7 +21,7 @@ export const Profile: React.FC = () => {
     );
   }
 
-  if (isError || !user || Array.isArray(user)) {
+  if (isError || !user) {
     return (
       <div className="container">
         <ErrorBlock page="UserNotFound" />
@@ -31,7 +31,7 @@ export const Profile: React.FC = () => {
 
   return (
     <div className="container">
-      {user && isSuccess && !Array.isArray(user) && (
+      {isSuccess && (
         <div className={styles.wrapper}>
           <Button text="На главную" onClick={() => navigate('/')} />
 

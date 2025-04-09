@@ -1,13 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
-import { fetchUsers, fetchUserById } from '../services/users';
+import { fetchUsers } from '../services/users';
 import { User } from '../types/user';
 
-export const useUsersQuery = (id?: number) => {
-  const { data, isLoading, isError, error, isSuccess } = useQuery<User[] | User, Error>({
-    queryKey: id ? ['user', id] : ['users'], // Ключ для запроса
-    queryFn: () => (id ? fetchUserById(id) : fetchUsers()), // Функция для выполнения запроса
-    staleTime: 1000 * 60 * 5, // Данные считаются актуальными 5 минут
-    refetchOnWindowFocus: false, // Не обновлять данные при фокусе окна
+//хук для получения всех пользователей
+export const useUsersQuery = () => {
+  const { data, isLoading, isError, error, isSuccess } = useQuery<User[], Error>({
+    queryKey: ['users'],
+    queryFn: fetchUsers,
+    staleTime: 1000 * 60 * 5,
+    refetchOnWindowFocus: false,
   });
 
   return {
