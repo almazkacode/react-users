@@ -28,7 +28,7 @@ const SearchComponent: React.FC = () => {
 
   return (
     <div className={styles.search}>
-      <span className={styles.icon}></span>
+      <span className={styles.icon} />
       <input
         value={value}
         onChange={onChangeInput}

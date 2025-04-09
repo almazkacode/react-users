@@ -9,7 +9,7 @@ import { Spinner } from './components/elements/Spinner/Spinner';
 const Home = lazy(() => import('./pages/Home/Home'));
 const Profile = lazy(() => import('./pages/Profile/Profile'));
 
-function App() {
+export const App = () => {
   return (
     <>
       <Header />
@@ -26,6 +26,4 @@ function App() {
       </main>
     </>
   );
-}
-
-export default App;
+};
