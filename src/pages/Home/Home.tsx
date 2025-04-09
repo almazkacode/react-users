@@ -72,15 +72,19 @@ const Home: React.FC = () => {
             <Button text="Сбросить фильтры" onClick={() => dispatch(clearFilters())} />
           </div>
           <ul className={styles.grid}>
-            {filteredItems?.map((user) => (
-              <Card
-                key={user.id}
-                id={user.id}
-                name={user.name}
-                email={user.email}
-                city={user.address.city}
-              />
-            ))}
+            {filteredItems && filteredItems.length > 0 ? (
+              filteredItems.map((user) => (
+                <Card
+                  key={user.id}
+                  id={user.id}
+                  name={user.name}
+                  email={user.email}
+                  city={user.address.city}
+                />
+              ))
+            ) : (
+              <p className={styles.empty}>Ничего не найдено.</p>
+            )}
           </ul>
         </>
       )}
