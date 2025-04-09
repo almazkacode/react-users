@@ -1,7 +1,6 @@
 import styles from './Error.module.scss';
-import { ERROR_DATA } from './errorData';
-
 import { useNavigate } from 'react-router-dom';
+import { ERROR_DATA } from './errorData';
 import { Button } from '../../ui/Button/Button';
 
 interface ErrorBlockProps {

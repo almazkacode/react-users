@@ -1,9 +1,10 @@
 import styles from './Home.module.scss';
-
 import { useEffect, useMemo } from 'react';
 import { useUsersQuery } from '../../hooks/useUsersQuery';
+
 import { useAppDispatch, useAppSelector } from '../../redux/store';
 import { filterSelector, clearFilters } from '../../redux/slices/filterSlice';
+
 import { Card } from '../../components/elements/Card/Card';
 import { ErrorBlock } from '../../components/elements/ErrorBlock/ErrorBlock';
 import { Search } from '../../components/ui/Search/Search';

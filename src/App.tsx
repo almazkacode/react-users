@@ -1,6 +1,7 @@
 import 'normalize.css';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
+
 import { Header } from './components/layout/Header/Header';
 import { ErrorBlock } from './components/elements/ErrorBlock/ErrorBlock';
 
