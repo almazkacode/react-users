@@ -5,10 +5,9 @@ import { Button } from '../../ui/Button/Button';
 
 interface ErrorBlockProps {
   page: string;
-  showButton?: boolean;
 }
 
-export const ErrorBlock: React.FC<ErrorBlockProps> = ({ page, showButton = true }) => {
+export const ErrorBlock: React.FC<ErrorBlockProps> = ({ page }) => {
   const navigate = useNavigate();
 
   const errorContent = ERROR_DATA.find((error) => error.page === page)?.content;
@@ -23,7 +22,7 @@ export const ErrorBlock: React.FC<ErrorBlockProps> = ({ page, showButton = true 
     <div className={styles.wrapper}>
       <h2 className={styles.title}>{title}</h2>
       <p>{text}</p>
-      {showButton && <Button text="На главную" onClick={() => navigate('/')} />}
+      <Button text="На главную" onClick={() => navigate('/')} />
     </div>
   );
 };

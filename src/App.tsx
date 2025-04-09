@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 
 import { Header } from './components/layout/Header/Header';
-import { ErrorBlock } from './components/elements/ErrorBlock/ErrorBlock';
+import { Spinner } from './components/elements/Spinner/Spinner';
 
 const Home = lazy(() => import('./pages/Home/Home'));
 const Profile = lazy(() => import('./pages/Profile/Profile'));
@@ -13,7 +13,7 @@ function App() {
     <>
       <Header />
       <main className="main">
-        <Suspense fallback={<ErrorBlock page="Loading" />}>
+        <Suspense fallback={<Spinner />}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/user/:id" element={<Profile />} />

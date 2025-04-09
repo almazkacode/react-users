@@ -10,6 +10,7 @@ import { ErrorBlock } from '../../components/elements/ErrorBlock/ErrorBlock';
 import { Search } from '../../components/ui/Search/Search';
 import { Select } from '../../components/ui/Select/Select';
 import { Button } from '../../components/ui/Button/Button';
+import { Spinner } from '../../components/elements/Spinner/Spinner';
 
 const Home: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -48,7 +49,7 @@ const Home: React.FC = () => {
   if (isLoading) {
     return (
       <div className="container">
-        <ErrorBlock page="Loading" showButton={false} />
+        <Spinner />
       </div>
     );
   }

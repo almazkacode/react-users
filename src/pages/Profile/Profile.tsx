@@ -5,6 +5,7 @@ import { useUserQuery } from '../../hooks/useUserQuery';
 
 import { ErrorBlock } from '../../components/elements/ErrorBlock/ErrorBlock';
 import { Button } from '../../components/ui/Button/Button';
+import { Spinner } from '../../components/elements/Spinner/Spinner';
 
 const Profile: React.FC = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const Profile: React.FC = () => {
   if (isLoading) {
     return (
       <div className="container">
-        <ErrorBlock page="Loading" showButton={false} />
+        <Spinner />
       </div>
     );
   }

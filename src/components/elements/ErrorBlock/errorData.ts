@@ -7,13 +7,6 @@ export const ERROR_DATA = [
     },
   },
   {
-    page: 'Loading',
-    content: {
-      title: 'Loading...',
-      text: 'Идет загрузка данных, пожалуйста, подождите',
-    },
-  },
-  {
     page: 'Error',
     content: {
       title: 'Произошла ошибка',
