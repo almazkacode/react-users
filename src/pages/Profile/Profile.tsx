@@ -1,4 +1,5 @@
 import styles from './Profile.module.scss';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useUserQuery } from '../../hooks/useUserQuery';
@@ -9,6 +10,10 @@ import { Spinner } from '../../components/elements/Spinner/Spinner';
 
 const Profile: React.FC = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // Получение id пользователя из url
   const { id } = useParams<{ id: string }>();
