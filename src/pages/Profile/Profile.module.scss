@@ -6,11 +6,16 @@
 }
 
 .card {
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
   padding: $space-lg;
   border: 1px solid $color-background;
   border-radius: $border-radius;
   box-shadow: $shadow;
+
+  @media (max-width: $breakpoint-xs) {
+    padding: $space-sm;
+  }
 }
 
 .name {
