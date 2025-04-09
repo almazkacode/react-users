@@ -11,6 +11,7 @@ const SearchComponent: React.FC = () => {
   const searchValue = useAppSelector((state) => state.filter.searchValue);
   const [value, setValue] = useState('');
 
+  // Задержка в 500 мс, чтобы избежать частых обновлений состояния
   const debouncedValue = useDebounce(value, 500);
 
   useEffect(() => {

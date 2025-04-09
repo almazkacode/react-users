@@ -10,10 +10,13 @@ import { Spinner } from '../../components/elements/Spinner/Spinner';
 const Profile: React.FC = () => {
   const navigate = useNavigate();
 
+  // Получение id пользователя из url
   const { id } = useParams<{ id: string }>();
 
+  // Запрос одного пользователя по ID с помощью React Query
   const { data: user, isLoading, isError, isSuccess } = useUserQuery(Number(id));
 
+  // Пока данные загружаются, показывается спиннер
   if (isLoading) {
     return (
       <div className="container">
@@ -22,6 +25,7 @@ const Profile: React.FC = () => {
     );
   }
 
+  // Если произошла ошибка
   if (isError || !user) {
     return (
       <div className="container">
