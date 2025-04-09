@@ -1,4 +1,5 @@
 import styles from './Card.module.scss';
+import { memo } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -9,7 +10,7 @@ type CardProps = {
   city: string;
 };
 
-export const Card: React.FC<CardProps> = ({ id, name, email, city }) => {
+export const CardComponent: React.FC<CardProps> = ({ id, name, email, city }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -24,3 +25,5 @@ export const Card: React.FC<CardProps> = ({ id, name, email, city }) => {
     </li>
   );
 };
+
+export const Card = memo(CardComponent);

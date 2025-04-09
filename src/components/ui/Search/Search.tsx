@@ -1,14 +1,14 @@
 import styles from './Search.module.scss';
 
-import { useState, useEffect } from 'react';
+import { useEffect, useState, memo } from 'react';
 import { useDebounce } from '@uidotdev/usehooks';
 
 import { useAppDispatch, useAppSelector } from '../../../redux/store';
-import { setSearchValue, filterSelector } from '../../../redux/slices/filterSlice';
+import { setSearchValue } from '../../../redux/slices/filterSlice';
 
-export const Search: React.FC = () => {
+const SearchComponent: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { searchValue } = useAppSelector(filterSelector);
+  const searchValue = useAppSelector((state) => state.filter.searchValue);
   const [value, setValue] = useState('');
 
   const debouncedValue = useDebounce(value, 500);
@@ -38,3 +38,5 @@ export const Search: React.FC = () => {
     </div>
   );
 };
+
+export const Search = memo(SearchComponent);

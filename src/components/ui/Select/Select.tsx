@@ -1,15 +1,16 @@
 import styles from './Select.module.scss';
+import { memo } from 'react';
 
 import { useAppDispatch, useAppSelector } from '../../../redux/store';
-import { filterSelector, setCities } from '../../../redux/slices/filterSlice';
+import { setCities } from '../../../redux/slices/filterSlice';
 
 interface SelectProps {
   cities: string[];
 }
 
-export const Select: React.FC<SelectProps> = ({ cities }) => {
+export const SelectComponent: React.FC<SelectProps> = ({ cities }) => {
   const dispatch = useAppDispatch();
-  const { city } = useAppSelector(filterSelector);
+  const city = useAppSelector((state) => state.filter.city);
 
   const handleCityChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     dispatch(setCities(event.target.value));
@@ -26,3 +27,5 @@ export const Select: React.FC<SelectProps> = ({ cities }) => {
     </select>
   );
 };
+
+export const Select = memo(SelectComponent);

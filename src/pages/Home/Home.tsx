@@ -1,5 +1,5 @@
 import styles from './Home.module.scss';
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useCallback } from 'react';
 import { useUsersQuery } from '../../hooks/useUsersQuery';
 
 import { useAppDispatch, useAppSelector } from '../../redux/store';
@@ -24,6 +24,10 @@ const Home: React.FC = () => {
     return () => {
       dispatch(clearFilters());
     };
+  }, [dispatch]);
+
+  const handleClearFilters = useCallback(() => {
+    dispatch(clearFilters());
   }, [dispatch]);
 
   const { data: users, isLoading, isError, isSuccess } = useUsersQuery();
@@ -69,7 +73,7 @@ const Home: React.FC = () => {
           <div className={styles.wrapper}>
             <Search />
             <Select cities={uniqueCities} />
-            <Button text="Сбросить фильтры" onClick={() => dispatch(clearFilters())} />
+            <Button text="Сбросить фильтры" onClick={handleClearFilters} />
           </div>
           <ul className={styles.grid}>
             {filteredItems && filteredItems.length > 0 ? (
