@@ -8,8 +8,6 @@ export const useUsersQuery = (id?: number) => {
     queryFn: () => (id ? fetchUserById(id) : fetchUsers()), // Функция для выполнения запроса
     staleTime: 1000 * 60 * 5, // Данные считаются актуальными 5 минут
     refetchOnWindowFocus: false, // Не обновлять данные при фокусе окна
-    placeholderData: (prev) => prev ?? [], // сохраняет предыдущие данные, пока грузятся новые
-    throwOnError: true, // выбросить ошибку наружу
   });
 
   return {

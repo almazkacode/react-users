@@ -1,6 +1,12 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-md;
+}
+
 .card {
-  max-width: 600px;
-  margin: 0 auto;
+  width: 600px;
   padding: $space-lg;
   border: 1px solid $color-background;
   border-radius: $border-radius;
