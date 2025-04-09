@@ -1,25 +1,5 @@
-//Цвета
-$color-light: #ffffff;
-$color-dark: #151317;
-$color-primary: #512689;
-$color-background: #f8f8f8;
-
-// Размеры шрифтов
-$font-size-xl: 36px;
-$font-size-lg: 24px;
-$font-size-md: 16px;
-// $font-size-sm: 14px;
-// $font-size-xs: 12px;
-
-//Border
-$border-radius: 8px;
-
-//Медиазапросы
-$breakpoint-xs: 576px;
-$breakpoint-sm: 768px;
-$breakpoint-md: 1024px;
-
-$transition: all 0.3s ease;
+// Контейнер
+$width-container: 1440px;
 
 // Основные отступы
 $space-xs: 8px;
@@ -28,7 +8,27 @@ $space-md: 24px;
 $space-lg: 30px;
 $space-xl: 80px;
 
-// Контейнер
-$width-container: 1440px;
+//Border
+$border-radius: 8px;
 
+//Цвета
+$color-light: #ffffff;
+$color-dark: #151317;
+$color-primary: #512689;
+$color-background: #f8f8f8;
+
+//Тень
 $shadow: 0 1px 5px 0 rgba(51, 51, 51, 0.15);
+
+// Размеры шрифтов
+$font-size-xl: 36px;
+$font-size-lg: 24px;
+$font-size-md: 16px;
+
+//Медиазапросы
+$breakpoint-xs: 576px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 1024px;
+
+// Плавный переход
+$transition: all 0.3s ease;
