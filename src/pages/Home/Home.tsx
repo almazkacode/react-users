@@ -7,33 +7,42 @@ import { filterSelector, clearFilters } from '../../redux/slices/filterSlice';
 import { Card } from '../../components/elements/Card/Card';
 import { ErrorBlock } from '../../components/elements/ErrorBlock/ErrorBlock';
 import { Search } from '../../components/ui/Search/Search';
+import { Select } from '../../components/ui/Select/Select';
+import { Button } from '../../components/ui/Button/Button';
 
 export const Home: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { searchValue } = useAppSelector(filterSelector);
+  const { searchValue, city } = useAppSelector(filterSelector);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // useEffect(() => {
-  //   return () => {
-  //     dispatch(clearFilters());
-  //   };
-  // }, [dispatch]);
+  useEffect(() => {
+    return () => {
+      dispatch(clearFilters());
+    };
+  }, [dispatch]);
 
   const { data: users, isLoading, isError, isSuccess } = useUsersQuery();
 
+  const uniqueCities = useMemo(
+    () => Array.from(new Set(users?.map((user) => user.address.city))),
+    [users],
+  );
+
   const filteredItems = useMemo(() => {
     return users?.filter((user) => {
-      const searchFilter = user.name
+      const searchFilter = (user.name + user.email)
         .replace(/\s+/g, '')
         .toLowerCase()
         .includes(searchValue.replace(/\s+/g, '').toLowerCase());
 
-      return searchFilter;
+      const cityFilter = city === 'all' || user.address.city === city;
+
+      return searchFilter && cityFilter;
     });
-  }, [users, searchValue]);
+  }, [users, searchValue, city]);
 
   if (isLoading) {
     return (
@@ -55,7 +64,11 @@ export const Home: React.FC = () => {
     <div className="container">
       {isSuccess && (
         <>
-          <Search />
+          <div className={styles.wrapper}>
+            <Search />
+            <Select cities={uniqueCities} />
+            <Button text="Сбросить фильтры" onClick={() => dispatch(clearFilters())} />
+          </div>
           <ul className={styles.grid}>
             {filteredItems?.map((user) => (
               <Card

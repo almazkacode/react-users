@@ -10,6 +10,23 @@
 
   @media (max-width: $breakpoint-sm) {
     grid-template-columns: 1fr;
-    margin-bottom: 30px;
+    margin-bottom: $space-lg;
+  }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $space-md;
+  margin-bottom: $space-lg;
+
+  @media (max-width: $breakpoint-md) {
+    justify-content: center;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    flex-direction: column;
   }
 }
