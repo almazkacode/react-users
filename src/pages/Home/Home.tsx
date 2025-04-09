@@ -10,7 +10,7 @@ import { Search } from '../../components/ui/Search/Search';
 import { Select } from '../../components/ui/Select/Select';
 import { Button } from '../../components/ui/Button/Button';
 
-export const Home: React.FC = () => {
+const Home: React.FC = () => {
   const dispatch = useAppDispatch();
   const { searchValue, city } = useAppSelector(filterSelector);
 
@@ -85,3 +85,5 @@ export const Home: React.FC = () => {
     </div>
   );
 };
+
+export default Home;

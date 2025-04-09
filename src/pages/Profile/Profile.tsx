@@ -6,7 +6,7 @@ import { useUserQuery } from '../../hooks/useUserQuery';
 import { ErrorBlock } from '../../components/elements/ErrorBlock/ErrorBlock';
 import { Button } from '../../components/ui/Button/Button';
 
-export const Profile: React.FC = () => {
+const Profile: React.FC = () => {
   const navigate = useNavigate();
 
   const { id } = useParams<{ id: string }>();
@@ -88,3 +88,5 @@ export const Profile: React.FC = () => {
     </div>
   );
 };
+
+export default Profile;
