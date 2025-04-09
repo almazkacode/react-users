@@ -1,0 +1,29 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-xs;
+  border-radius: $border-radius;
+  padding: $space-lg;
+  width: 100%;
+  height: auto;
+  box-shadow: $shadow;
+  border: 1px solid $color-background;
+  white-space: nowrap;
+  transition: $transition;
+
+  @media (hover: hover) {
+    &:hover {
+      border: 1px solid $color-dark;
+    }
+  }
+
+  @media (max-width: $breakpoint-xs) {
+    padding: $space-sm;
+  }
+}
+
+.name {
+  font-size: $font-size-lg;
+  font-weight: 700;
+}

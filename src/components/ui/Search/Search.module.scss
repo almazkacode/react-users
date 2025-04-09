@@ -1,0 +1,43 @@
+.search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $space-xs;
+  width: 280px;
+  height: 50px;
+  border-bottom: 1px solid $color-dark;
+}
+
+.input {
+  width: 245px;
+  height: 40px;
+  border: 0;
+
+  &:focus::placeholder {
+    color: transparent;
+  }
+
+  &::placeholder {
+    transform: translateY(3px);
+  }
+
+  &::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    background-image: url('close.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+.icon {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background-image: url('search.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

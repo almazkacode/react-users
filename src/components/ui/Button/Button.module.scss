@@ -1,0 +1,18 @@
+.button {
+  display: inline-block;
+  border: 1px solid $color-primary;
+  border-radius: $border-radius;
+  padding: $space-xs $space-sm;
+  width: auto;
+  height: 38px;
+  color: $color-primary;
+  transition: $transition;
+  white-space: nowrap;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $color-primary;
+      color: $color-light;
+    }
+  }
+}

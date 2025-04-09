@@ -1,0 +1,32 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-md;
+}
+
+.card {
+  width: 100%;
+  max-width: 600px;
+  padding: $space-lg;
+  border: 1px solid $color-background;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+
+  @media (max-width: $breakpoint-xs) {
+    padding: $space-sm;
+  }
+}
+
+.name {
+  font-size: $font-size-lg;
+  margin-bottom: $space-md;
+}
+
+.list {
+  margin-bottom: $space-md;
+}
+
+.address {
+  font-style: normal;
+}

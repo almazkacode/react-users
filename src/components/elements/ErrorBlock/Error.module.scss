@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-md;
+  height: 100vh;
+  text-align: center;
+  padding: $space-md;
+}
+
+.title {
+  font-weight: 700;
+  font-size: $font-size-lg;
+}
